@@ -1,0 +1,17 @@
+.o_hello_world_view {
+
+	h1 {
+		font-size: 7em;
+		display: flex;
+	    flex-direction: column;
+	    justify-content: center;
+	    align-items: center;
+	    text-align: center;
+	    padding-top: 50px;
+	}
+
+	#mapid {
+		height: 540px;
+	}
+
+}

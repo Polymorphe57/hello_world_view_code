@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+         <record model="ir.ui.view" id="hello_world_view_1">
+            <field name="model">res.partner</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <hello_world display_contacts="1" >
+                </hello_world>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="hello_world_view_2">
+            <field name="model">res.partner</field>
+            <field name="mode">primary</field>
+            <field name="arch" type="xml">
+                <hello_world js_class="hello_world_evolution" display_contacts="1" >
+                </hello_world>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="first_hello_world_view">
+            <field name="name">Hello World</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">hello_world</field>
+            <field name="view_id" ref="hello_world_view_1"/>
+        </record>
+
+        <record model="ir.actions.act_window" id="second_hello_world_view">
+            <field name="name">Hello World</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">hello_world</field>
+            <field name="view_id" ref="hello_world_view_2"/>
+        </record>
+
+        <menuitem id="main_hello_world_menu" name="Hello World App"/>
+
+        <menuitem id="hello_world_submenu" name="Hello World Menu"
+                  parent="main_hello_world_menu"/>
+
+        <menuitem id="open_view" name="Open Hello World View" parent="hello_world_submenu"
+                  action="first_hello_world_view"/>
+        <menuitem id="open_view_2" name="Open Hello World View Evolution" parent="hello_world_submenu"
+                  action="second_hello_world_view"/>
+
+</odoo>
