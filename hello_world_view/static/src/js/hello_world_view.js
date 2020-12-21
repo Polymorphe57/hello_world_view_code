@@ -7,6 +7,9 @@ var AbstractModel = require('web.AbstractModel');
 var AbstractRenderer = require('web.AbstractRenderer');
 var AbstractView = require('web.AbstractView');
 var viewRegistry = require('web.view_registry');
+	
+const ControlPanel = require('web.ControlPanel');
+const SearchPanel = require("web/static/src/js/views/search_panel.js");
 
 
 var HelloWorldController = AbstractController.extend({});
@@ -104,6 +107,8 @@ var HelloWorldView = AbstractView.extend({
         Model: HelloWorldModel,
         Controller: HelloWorldController,
         Renderer: HelloWorldRenderer,
+	ControlPanel: ControlPanel,
+        SearchPanel: SearchPanel,
     },
     cssLibs: [
         '/hello_world_view/static/lib/leaflet/leaflet.css'
